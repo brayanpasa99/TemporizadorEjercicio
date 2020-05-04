@@ -22,6 +22,9 @@ public class InterfazGrafica extends JFrame implements ActionListener{
         ventanamain.setLayout(null);
         ventanamain.setBounds(100, 100, 500, 500);
         ventanamain.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        
+        System.out.println("Esta es la branch interfaz :3");
+        
     }
     
     @Override
