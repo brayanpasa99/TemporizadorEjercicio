@@ -16,6 +16,8 @@ public class TemporizadorAplicacion {
      */
     public static void main(String[] args) {
         Temporizador t = new Temporizador();
+        t.setMinutosEjercicio(20);
+        t.setSegundoDescanso(30);
         t.start(0, 1000);
         InterfazGrafica iniciar = new InterfazGrafica();
         
