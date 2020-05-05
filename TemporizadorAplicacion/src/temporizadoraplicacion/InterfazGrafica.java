@@ -93,7 +93,10 @@ public class InterfazGrafica extends JFrame implements ActionListener{
             int tiempo_descanso = Integer.parseInt(tf3.getText());
         
             ValidacionDatos valida = new ValidacionDatos(minutos_entrenamiento, tiempo_ejercicio, tiempo_descanso);
-                
+            Temporizador t = new Temporizador();
+            t.setMinutosEjercicio(20);
+            t.setSegundoDescanso(30);
+            t.start(0, 1000);
             if(valida.valida_minuto() == true){
                 System.out.println("Datos correctos, enviar");
             } else {
