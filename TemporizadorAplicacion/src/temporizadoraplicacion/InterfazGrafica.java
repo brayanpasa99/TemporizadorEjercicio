@@ -29,7 +29,7 @@ public class InterfazGrafica extends JFrame implements ActionListener{
     private JTextArea ta3 = new JTextArea();
     
     private JButton b1 = new JButton("Ingresar tiempos");
-    
+        
     public InterfazGrafica (){
         
         this.setVisible(true);
@@ -92,7 +92,13 @@ public class InterfazGrafica extends JFrame implements ActionListener{
             int tiempo_ejercicio = Integer.parseInt(tf2.getText());
             int tiempo_descanso = Integer.parseInt(tf3.getText());
         
-            System.out.println(minutos_entrenamiento + " " + tiempo_ejercicio + " " + tiempo_descanso);
+            ValidacionDatos valida = new ValidacionDatos(minutos_entrenamiento, tiempo_ejercicio, tiempo_descanso);
+                
+            if(valida.valida_minuto() == true){
+                System.out.println("Datos correctos, enviar");
+            } else {
+                System.out.println("Datos incorrectos");
+            }
             
         }
     
