@@ -15,7 +15,10 @@ public class TemporizadorAplicacion {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        Temporizador t = new Temporizador();
+        t.start(0, 1000);
         InterfazGrafica iniciar = new InterfazGrafica();
+        
     }
     
 }
