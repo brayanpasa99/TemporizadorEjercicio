@@ -87,8 +87,12 @@ public class InterfazGrafica extends JFrame implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         
         if(e.getSource()==b1){
+            
+            int minutos_entrenamiento = Integer.parseInt(tf1.getText());
+            int tiempo_ejercicio = Integer.parseInt(tf2.getText());
+            int tiempo_descanso = Integer.parseInt(tf3.getText());
         
-            System.out.println("Hola mundo");
+            System.out.println(minutos_entrenamiento + " " + tiempo_ejercicio + " " + tiempo_descanso);
             
         }
     
