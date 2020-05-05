@@ -26,22 +26,6 @@ public class Temporizador {
         tiempo = new Timer();
         
     }
-
-    public int getMinutosEjercicio() {
-        return minutosEjercicio;
-    }
-
-    public void setMinutosEjercicio(int minutosEjercicio) {
-        this.minutosEjercicio = minutosEjercicio;
-    }
-
-    public int getSegundoDescanso() {
-        return segundoDescanso;
-    }
-
-    public void setSegundoDescanso(int segundoDescanso) {
-        this.segundoDescanso = segundoDescanso;
-    }
     
  
     TimerTask task = new TimerTask() {
