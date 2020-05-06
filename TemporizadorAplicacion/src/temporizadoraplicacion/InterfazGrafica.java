@@ -5,6 +5,9 @@ import java.awt.Color;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.sound.sampled.LineUnavailableException;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -17,7 +20,6 @@ public class InterfazGrafica extends JFrame implements ActionListener{
     private JLabel label2 = new JLabel("Tiempo de ejercicio (Min)");
     private JLabel label3 = new JLabel("Tiempo de descanso (Min)");
     private JLabel label4 = new JLabel("Temporizador Total: ");
-    private JLabel label5 = new JLabel("Temporizador temporal: ");
     private JLabel label6 = new JLabel("Estado: ");
     
     private JTextField tf1 = new JTextField();
@@ -25,7 +27,6 @@ public class InterfazGrafica extends JFrame implements ActionListener{
     private JTextField tf3 = new JTextField();
     
     private JTextArea ta1 = new JTextArea();
-    private JTextArea ta2 = new JTextArea();
     private JTextArea ta3 = new JTextArea();
     
     private JButton b1 = new JButton("Ingresar tiempos");
@@ -46,7 +47,6 @@ public class InterfazGrafica extends JFrame implements ActionListener{
         c.add(label2);
         c.add(label3);
         c.add(label4);
-        c.add(label5);
         c.add(label6);
         
         c.add(b1);
@@ -56,14 +56,12 @@ public class InterfazGrafica extends JFrame implements ActionListener{
         c.add(tf3);
         
         c.add(ta1);
-        c.add(ta2);
         c.add(ta3);
         
         label.setBounds(30,20,200,20);
         label2.setBounds(330,20,200,20);
         label3.setBounds(630,20,200,20);
-        label4.setBounds(100,120,200,20);
-        label5.setBounds(100,200,200,20);
+        label4.setBounds(100,165,200,20);
         label6.setBounds(500,165,200,20);
         
         b1.setBounds(50, 50, 800, 20);
@@ -73,8 +71,7 @@ public class InterfazGrafica extends JFrame implements ActionListener{
         tf2.setBounds(500, 20, 50, 20);
         tf3.setBounds(800, 20, 50, 20);
         
-        ta1.setBounds(250, 100, 200, 60);
-        ta2.setBounds(250, 180, 200, 60);
+        ta1.setBounds(250, 145, 200, 60);
         ta3.setBounds(550, 145, 200, 60);
     }
     
@@ -92,15 +89,13 @@ public class InterfazGrafica extends JFrame implements ActionListener{
             int tiempo_ejercicio = Integer.parseInt(tf2.getText());
             int tiempo_descanso = Integer.parseInt(tf3.getText());
         
-            ValidacionDatos valida = new ValidacionDatos(minutos_entrenamiento, tiempo_ejercicio, tiempo_descanso);
-            Temporizador t = new Temporizador();
-            t.setMinutosEjercicio(20);
-            t.setSegundoDescanso(30);
-            t.start(0, 1000);
-            if(valida.valida_minuto() == true){
-                System.out.println("Datos correctos, enviar");
-            } else {
-                System.out.println("Datos incorrectos");
+            if(tiempo_ejercicio+tiempo_descanso==60){
+                Temporizador cuenta = new Temporizador();
+                cuenta.asignaTextArea(ta3, ta1);
+                cuenta.setMinutosEjercicio(minutos_entrenamiento);
+                cuenta.setSegundoDescanso(tiempo_descanso);
+                cuenta.start(0, 1000);
+                
             }
             
         }

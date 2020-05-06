@@ -5,6 +5,8 @@
  */
 package temporizadoraplicacion;
 
+
+
 /**
  *
  * @author braya
@@ -15,8 +17,9 @@ public class TemporizadorAplicacion {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+
         InterfazGrafica iniciar = new InterfazGrafica();
-        
+
     }
-    
+
 }
