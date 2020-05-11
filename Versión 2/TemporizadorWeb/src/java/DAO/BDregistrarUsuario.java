@@ -24,24 +24,10 @@ public class BDregistrarUsuario {
     public void inserta_usuario(String usuario, String contraseña) throws SQLException{
         String strSQL = "INSERT INTO usuarios (usuario, contraseña) VALUES ('" + usuario + "', '" + contraseña + "');";
         System.out.println(strSQL);
-        /*PreparedStatement pstm = conexion.getConexion().prepareStatement(strSQL);
-        ResultSet res = pstm.executeQuery();*/
-        
-    }
-    
-    /*public double getCopia(String idMaterial) throws SQLException {
-        String strSQL = "SELECT * FROM copia WHERE k_isbnissn = '" + idMaterial + "' ORDER BY k_copia";
-        System.out.println(strSQL);
         PreparedStatement pstm = conexion.getConexion().prepareStatement(strSQL);
         ResultSet res = pstm.executeQuery();
-        double copia1 = 0;
-        if (res.next()){
-            if (res.getRow() == 1){
-                copia1 = res.getDouble("k_copia");
-            }  
-        }
-        return copia1;
-    }*/
+        
+    }
     
     public String getMensaje() {
         return conexion.getMensaje();
