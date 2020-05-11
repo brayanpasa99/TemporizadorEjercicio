@@ -3,12 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package temporizadoraplicacion;
+package DAO;
 
 /**
  *
  * @author braya
  */
-public class ValidacionDatos {
+public class BDvalidarDatos {
+    
+    public BDvalidarDatos(){
+        
+    }
+    
+    public void 
     
 }
