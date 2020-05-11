@@ -5,8 +5,13 @@
  */
 package servlets;
 
+import DAO.BDvalidarDatos;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -33,8 +38,15 @@ public class validaDatos extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
-        BD
+        BDvalidarDatos val_d = new BDvalidarDatos();
+        
+        String usuario = request.getParameter("user");
+        String contraseña = request.getParameter("password");
+        
+        System.out.println(usuario + " " + contraseña);
+        
         try (PrintWriter out = response.getWriter()) {
+            
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
