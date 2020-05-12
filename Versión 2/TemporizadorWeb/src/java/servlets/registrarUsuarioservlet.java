@@ -22,7 +22,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author braya
  */
 @WebServlet(name = "registrarUsuario", urlPatterns = {"/registrarUsuario"})
-public class registrarUsuario extends HttpServlet {
+public class registrarUsuarioservlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -49,10 +49,10 @@ public class registrarUsuario extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet registrarUsuario</title>");            
+            out.println("<title>Servlet registrarUsuarioservlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet registrarUsuario at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet registrarUsuarioservlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");*/
         } catch (Exception e) {

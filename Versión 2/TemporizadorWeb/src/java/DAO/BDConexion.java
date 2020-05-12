@@ -15,9 +15,9 @@ import java.sql.SQLException;
  */
 public class BDConexion {
     
-    static String bd = "TempBase"; // Nombre de la base de datos
+    static String bd = "temporizador"; // Nombre de la base de datos
     static String login = "postgres";
-    static String password = "Brayan.29.Postgres"; //Debe reemplazarse por el password en su propia instalación
+    static String password = "1234"; //Debe reemplazarse por el password en su propia instalación
 
     static String url = "jdbc:postgresql://localhost:5432/"+bd;
 

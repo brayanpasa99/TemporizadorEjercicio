@@ -6,12 +6,9 @@
 package servlets;
 
 import DAO.BDvalidarDatos;
+import Logica.Persona;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -37,21 +34,26 @@ public class validaDatos extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
+
         BDvalidarDatos val_d = new BDvalidarDatos();
+        Persona u = new Persona();  
         
-        String usuario = request.getParameter("user");
-        String contraseña = request.getParameter("password");
-        
-        System.out.println(usuario + " " + contraseña);
-        
+        u.setUsuario(request.getParameter("user"));
+        u.setContraseña(request.getParameter("password"));
+
+        String obtiene_usuario = val_d.datos_usuario(u.getUsuario(), u.getContraseña());
+        System.out.println(obtiene_usuario);
+        if ("NoExiste".equals(obtiene_usuario)) {
+            request.getSession().setAttribute("unaPersona", u);
+        }
+
         try (PrintWriter out = response.getWriter()) {
-            
+
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet validaDatos</title>");            
+            out.println("<title>Servlet validaDatos</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet validaDatos at " + request.getContextPath() + "</h1>");
