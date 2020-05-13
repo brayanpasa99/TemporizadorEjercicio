@@ -9,13 +9,45 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="estiloLogin.css"/>
         <title>Login</title>
     </head>
     <body>
         <form action="validaDatos">
-            <h1>Usuario: <input type="text" id="user" name="user"></h1>
-            <h1>Contraseña: <input type="password" id="password" name="password"></h1>   
-            <input type="submit" value="Ingresar">
+           
+            <center>
+            
+                <article id="todo">
+
+                        <article id="art1">
+
+                            <center>
+                            <p>Every minute on the minute</p>
+                            </center>
+
+                        </article>
+
+                        <article id="art2">
+
+                            <center>
+                            <h3>Login</h3>
+                            </center>
+
+                        </article>
+
+                    <h1>Usuario:  &nbsp &nbsp &nbsp &nbsp &nbsp<input type="text" id="user" name="user"></h1>
+                    <h1>Contraseña: &nbsp &nbsp &nbsp<input type="password" id="password" name="password"></h1>   
+                    
+                    <article id="artBoton">
+                    
+                        <input type="submit" value="Ingresar" id="boton">
+
+                    </article>
+                    
+                </article>
+                
+            </center>
+             
         </form>
     </body>
 </html>
