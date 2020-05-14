@@ -15,16 +15,13 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="estiloLogin.css"/>
-<<<<<<< HEAD
         <script>
             function escribir(){
-                document.getElementById('comentarios').value=<%=rutinas%>
+                document.getElementById('comentarios').innerHTML = <%=rutinas%>;
             }
         </script>
         <title>Login</title>
-=======
         <title>Consulta Usuario</title>
->>>>>>> 9d9b0e33c098326df871961f62342ae8abefaabd
     </head>
     <body onload="escribir()">
         <form action="tiempos.jsp">
@@ -54,8 +51,8 @@
                     <h1>Edad: <input type="text" value="<%=u.getEdad()%>" disabled=""></h1>
                     <h1>Rutinas de ejercicio</h1> 
                     
-                    <input type="text" size="100" name="comentarios" id="comentarios" value="<%=rutinas%>">
-                    
+                    <input type="text" size="100" name="comentarios" id="comentarios1" value="<%=rutinas%>">
+                    <p id="comentarios"></p>
                     <article id="artBoton">
                     
                         <input type="submit" value="Regresar" id="boton">
