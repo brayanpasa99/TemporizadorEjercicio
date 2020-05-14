@@ -61,6 +61,8 @@ public class registrarUsuarioServlet extends HttpServlet {
             reg_u.consigue_id();
             reg_u.inserta_tdatosusuario(apellido, nombre, edad);
             reg_u.inserta_tusuarios(usuario, contraseña);  
+            
+            response.sendRedirect("index.jsp");
             /* TODO output your page here. You may use following sample code. 
             out.println("<!DOCTYPE html>");
             out.println("<html>");

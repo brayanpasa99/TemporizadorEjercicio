@@ -41,7 +41,7 @@
                     <h1>Minutos de entrenamiento: &nbsp &nbsp &nbsp<input type="number" id="minEt" name="minEt"></h1>
                     <h1>Tiempo de ejercicio (SEG): &nbsp &nbsp &nbsp<input type="number" id="ejercicio" name="ejercicio"></h1>   
                     <!--<h1>Tiempo de descanso (SEG): &nbsp &nbsp &nbsp<input type="number" id="descando" name="descando"></h1>-->  
-                    <input type="hidden" id="usuario" name="usuario" value="<% u.getUsuario(); %>">
+                    <input type="hidden" id="usuario" name="usuario" value="<%= u.getUsuario()%>">
                     <article id="artBoton">
 
                         <input type="submit" value="Ingresar Tiempos" id="boton"> 

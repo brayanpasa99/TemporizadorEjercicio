@@ -40,6 +40,9 @@ public class temporizadorServlet extends HttpServlet {
         temp.setMinutosEjercicio(Integer.parseInt(request.getParameter("minEt")));
         temp.setSegundoDescanso(60-Integer.parseInt(request.getParameter("ejercicio")));
         
+        System.out.println("El usuario que llegó fue: " + request.getParameter("usuario"));
+        
+        ru.consigue_id();
         ru.guarda_rutina(request.getParameter("usuario"), 60-Integer.parseInt(request.getParameter("ejercicio")), Integer.parseInt(request.getParameter("ejercicio")), request.getParameter("minEt"));
         
         request.getSession().setAttribute("temporizador", temp);
