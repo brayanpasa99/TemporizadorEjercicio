@@ -5,8 +5,8 @@
  */
 package servlets;
 
-import DAO.BDvalidarDatos;
-import Logica.Persona;
+import DAO.BDrutinas;
+import Logica.temporizadorLogica;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -19,8 +19,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author braya
  */
-@WebServlet(name = "validaDatosServlet", urlPatterns = {"/validaDatosServlet", "/validaDatos"})
-public class validaDatosServlet extends HttpServlet {
+@WebServlet(name = "temporizadorServlet", urlPatterns = {"/temporizadorServlet"})
+public class temporizadorServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,25 +35,17 @@ public class validaDatosServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
-        BDvalidarDatos val_d = new BDvalidarDatos();
-        Persona u = new Persona();
-
-        String obtiene_usuario = val_d.existe_usuario(request.getParameter("user"), request.getParameter("password"));
-        System.out.println(obtiene_usuario);
-        if ("NoExiste".equals(obtiene_usuario)) {
-            response.sendRedirect("registrarUsuario.jsp");
-        } else {
-            String[] datos_completos = val_d.datos_usuario(request.getParameter("user"));
-            u.setApellido(datos_completos[0]);
-            u.setNombre(datos_completos[1]);
-            u.setEdad(Integer.parseInt(datos_completos[2]));
-            u.setUsuario(datos_completos[3]);
-            request.getSession().setAttribute("UnUsuario", u);
-            response.sendRedirect("tiempos.jsp");
-        }
-
+        BDrutinas ru = new BDrutinas();
+        temporizadorLogica temp = new temporizadorLogica();
+        temp.setMinutosEjercicio(Integer.parseInt(request.getParameter("minEt")));
+        temp.setSegundoDescanso(60-Integer.parseInt(request.getParameter("ejercicio")));
+        
+        ru.guarda_rutina(request.getParameter("usuario"), 60-Integer.parseInt(request.getParameter("ejercicio")), Integer.parseInt(request.getParameter("ejercicio")), request.getParameter("minEt"));
+        
+        request.getSession().setAttribute("temporizador", temp);
+        
         try (PrintWriter out = response.getWriter()) {
-
+            response.sendRedirect("temporizador.jsp");
         }
     }
 

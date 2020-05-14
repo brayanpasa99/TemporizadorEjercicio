@@ -14,46 +14,40 @@
     </head>
     <body>
         <form action="validaDatos">
-<<<<<<< HEAD
-            <h1>Usuario: <input type="text" id="user" name="user" required=""></h1>
-            <h1>Contraseña: <input type="password" id="password" name="password" required=""></h1>   
-            <input type="submit" value="Ingresar">
-=======
-           
+
             <center>
-            
+
                 <article id="todo">
 
-                        <article id="art1">
+                    <article id="art1">
 
-                            <center>
+                        <center>
                             <p>Every minute on the minute</p>
-                            </center>
+                        </center>
 
-                        </article>
+                    </article>
 
-                        <article id="art2">
+                    <article id="art2">
 
-                            <center>
+                        <center>
                             <h3>Login</h3>
-                            </center>
+                        </center>
 
-                        </article>
+                    </article>
 
-                    <h1>Usuario:  &nbsp &nbsp &nbsp &nbsp &nbsp<input type="text" id="user" name="user" value="daniel"></h1>
-                    <h1>Contraseña: &nbsp &nbsp &nbsp<input type="password" id="password" name="password" value="123"></h1>   
-                    
+                    <h1>Usuario:  &nbsp &nbsp &nbsp &nbsp &nbsp<input type="text" id="user" name="user" placeholder="Usuario"></h1>
+                    <h1>Contraseña: &nbsp &nbsp &nbsp<input type="password" id="password" name="password" placeholder="Contraseña"></h1>   
+
                     <article id="artBoton">
-                    
+
                         <input type="submit" value="Ingresar" id="boton">
 
                     </article>
-                    
+
                 </article>
-                
+
             </center>
-             
->>>>>>> origin/InterfazServletBase
+
         </form>
     </body>
 </html>

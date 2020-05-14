@@ -35,9 +35,9 @@
 
                         </article>
 
-                    <h1>Temporizador total: &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <textarea name="comentarios" rows="1" cols="25">Aqui va el temp</textarea></h1>
+                    <h1>Temporizador total: &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <textarea name="comentarios" rows="1" cols="25" placeholder="Aqui va el tiempo"></textarea></h1>
                         
-                    <h1>Estado: &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp <textarea name="comentarios" rows="2" cols="25">Aqui va el Estado</textarea></h1>
+                    <h1>Estado: &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp <textarea name="comentarios" rows="2" cols="25" placeholder="Aqui va el estado actual"></textarea></h1>
                         
                     <article id="artBoton">
                     

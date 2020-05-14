@@ -4,6 +4,9 @@
     Author     : danbr
 --%>
 
+<%@page import="Logica.Persona"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<% Persona u = (Persona) session.getAttribute("UnUsuario");%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,61 +15,59 @@
         <title>Temporizador</title>
     </head>
     <body>
-        
-        <form action="temporizador.jsp">
-           
+
+        <form action="temporizadorServlet">
+
             <center>
-            
+
                 <article id="todo">
 
-                        <article id="art1">
+                    <article id="art1">
 
-                            <center>
+                        <center>
                             <p>Every minute on the minute</p>
-                            </center>
+                        </center>
 
-                        </article>
-
-                        <article id="art2">
-
-                            <center>
-                            <h3>Ingreso de tiempos</h3>
-                            </center>
-
-                        </article>
-
-                    <h1>Minutos de entrenamiento: &nbsp &nbsp &nbsp<input type="number" id="minEbn" name="minEbn"></h1>
-                    <h1>Tiempo de ejercicio (SEG): &nbsp &nbsp &nbsp<input type="number" id="ejercicio" name="ejercicio"></h1>   
-                    <h1>Tiempo de descanso (SEG): &nbsp &nbsp &nbsp<input type="number" id="descando" name="descando"></h1>   
-                    
-                    <article id="artBoton">
-                    
-                        <input type="submit" value="Ingresar Tiempos" id="boton"> 
-                    
                     </article>
-                    
-                </article>
-                
-            </center>
-            
-        </form>
-        
-            <center>
-        
-                <article id="artConsulta">
-            
-                    <form action="consultaUsuario.jsp">
 
-                        <input type="submit" value="Cosultar registros pasados" id="botonConsulta">
+                    <article id="art2">
 
-                    </form>
-        
+                        <center>
+                            <h3>Ingreso de tiempos</h3>
+                        </center>
+
+                    </article>
+
+                    <h1>Minutos de entrenamiento: &nbsp &nbsp &nbsp<input type="number" id="minEt" name="minEt"></h1>
+                    <h1>Tiempo de ejercicio (SEG): &nbsp &nbsp &nbsp<input type="number" id="ejercicio" name="ejercicio"></h1>   
+                    <!--<h1>Tiempo de descanso (SEG): &nbsp &nbsp &nbsp<input type="number" id="descando" name="descando"></h1>-->  
+                    <input type="hidden" id="usuario" name="usuario" value="<% u.getUsuario(); %>">
+                    <article id="artBoton">
+
+                        <input type="submit" value="Ingresar Tiempos" id="boton"> 
+
+                    </article>
+
                 </article>
-                
+
             </center>
-             
+
         </form>
-        
-    </body>
+
+    <center>
+
+        <article id="artConsulta">
+
+            <form action="consultaUsuario.jsp">
+                <input type="submit" value="Cosultar registros pasados" id="botonConsulta">
+            </form>
+
+        </article>
+
+    </center>
+
+</form>
+
+</body>
 </html>
 
