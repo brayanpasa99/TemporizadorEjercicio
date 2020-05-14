@@ -5,10 +5,9 @@
  */
 package servlets;
 
-import DAO.BDvalidarDatos;
+import DAO.BDregistrarUsuario;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -22,8 +21,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author braya
  */
-@WebServlet(name = "validaDatos", urlPatterns = {"/validaDatos"})
-public class validaDatos extends HttpServlet {
+@WebServlet(name = "registrarUsuario", urlPatterns = {"/registrarUsuario"})
+public class registrarUsuario extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,26 +36,41 @@ public class validaDatos extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
         
-        BDvalidarDatos val_d = new BDvalidarDatos();
+        BDregistrarUsuario reg_u = new BDregistrarUsuario();
         
-        String usuario = request.getParameter("user");
-        String contraseña = request.getParameter("password");
-        
-        System.out.println(usuario + " " + contraseña);
-        
-        try (PrintWriter out = response.getWriter()) {
+        try {
             
-            /* TODO output your page here. You may use following sample code. */
+            String usuario = request.getParameter("user");
+            String contraseña = request.getParameter("password");
+            reg_u.inserta_usuario(usuario, contraseña);
+            /* TODO output your page here. You may use following sample code. 
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet validaDatos</title>");            
+            out.println("<title>Servlet registrarUsuario</title>");            
             out.println("</head>");
             out.println("<body>");
-//            out.println("<h1>Servlet validaDatos at " +request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet registrarUsuario at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");*/
+        } catch (Exception e) {
+
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet Inicio</title>");
+            out.println("</head>");
+            out.println("<body>");
+            /*out.println("<h1>Error at " + e.toString() + "</h1>");
+            out.println("<p>Error: " +  copia.getMensaje() + "</p>");
+            out.println("<p>Error: " +  reserva.getMensaje() + "</p>");
+            out.println("<p>Error: " +  e.getMessage() + "</p>");*/
             out.println("</body>");
             out.println("</html>");
+
+        } finally {
+            out.close();
         }
     }
 
@@ -73,6 +87,7 @@ public class validaDatos extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+
     }
 
     /**

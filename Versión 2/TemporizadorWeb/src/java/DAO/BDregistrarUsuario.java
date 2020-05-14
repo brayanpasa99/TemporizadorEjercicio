@@ -8,8 +8,6 @@ package DAO;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -23,15 +21,11 @@ public class BDregistrarUsuario {
         conexion = new BDConexion();
     }
     
-    public void inserta_usuario(String usuario, String contraseña){
-        try {
-            String strSQL = "INSERT INTO usuarios (usuario, contraseña) VALUES ('" + usuario + "', '" + contraseña + "');";
-            System.out.println(strSQL);
-            PreparedStatement pstm = conexion.getConexion().prepareStatement(strSQL);
-            ResultSet res = pstm.executeQuery();
-        } catch (SQLException ex) {
-            Logger.getLogger(BDregistrarUsuario.class.getName()).log(Level.SEVERE, null, ex);
-        }
+    public void inserta_usuario(String usuario, String contraseña) throws SQLException{
+        String strSQL = "INSERT INTO usuarios (usuario, contraseña) VALUES ('" + usuario + "', '" + contraseña + "');";
+        System.out.println(strSQL);
+        PreparedStatement pstm = conexion.getConexion().prepareStatement(strSQL);
+        ResultSet res = pstm.executeQuery();
         
     }
     

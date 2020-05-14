@@ -24,18 +24,12 @@ public class BDvalidarDatos {
         System.out.println(conexion.getMensaje());
     }
     
-    public String datos_usuario(String usuario, String contraseña){
+    public void datos_usuario(String usuario, String contraseña){
         try {
             String strSQL = "SELECT * FROM usuarios WHERE usuario = '" + usuario +"' AND contraseña = '" + contraseña + "';";
             System.out.println(strSQL);
             PreparedStatement pstm = conexion.getConexion().prepareStatement(strSQL);
             ResultSet res = pstm.executeQuery();
-            if(!res.next()){
-                return "NoExiste";
-            } else {
-                return res.getString(1);
-            }
-            
             /*public double getCopia(String idMaterial) throws SQLException {
             String strSQL = "SELECT * FROM copia WHERE k_isbnissn = '" + idMaterial + "' ORDER BY k_copia";
             System.out.println(strSQL);
@@ -49,10 +43,10 @@ public class BDvalidarDatos {
             }
             return copia1;
         }*/ } catch (SQLException ex) {
+            System.out.println("ERRRRRRRRRRROOOOOOOOOOOOOR");
             System.out.println(ex.toString());
             Logger.getLogger(BDvalidarDatos.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return null;
     }
     
     public String getMensaje() {
