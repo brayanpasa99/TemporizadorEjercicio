@@ -8,6 +8,7 @@ package DAO;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -57,24 +58,25 @@ public class BDrutinas {
         }
     }
 
-    public void consulta_rutinas(String usuario) {
-
+    public String consulta_rutinas(String usuario) {
         try {
-            String strSQL = "SELECT du.apellido, du.nombre, du.edad, u.usuario \n"
-                    + "FROM datosusuario du \n"
-                    + "INNER JOIN usuarios u ON du.id_datosu = u.id_datosu \n"
-                    + "WHERE usuario = '" + usuario + "';";
+            String strSQL = "SELECT t_descanso, t_ejercicio, t_totale, f_rutina \n"
+                    + "FROM rutinasusuario WHERE usuario = '" + usuario + "';";
             System.out.println(strSQL);
             PreparedStatement pstm = conexion.getConexion().prepareStatement(strSQL);
             ResultSet res = pstm.executeQuery();
+            String lectura = ""; 
             while (res.next()) {
-
+                lectura = lectura + "Descanso: " + res.getString(1) + " segundos " + "Ejercicio: " + res.getString(2) +" segundos " + "Duración:" + res.getString(3) + " minutos " + "Fecha: " + res.getString(4) + "\n";
             }
+            
+            return lectura;
 
         } catch (SQLException ex) {
             System.out.println(ex.toString());
             Logger.getLogger(BDvalidarDatos.class.getName()).log(Level.SEVERE, null, ex);
         }
+        return null;
     }
 
 }

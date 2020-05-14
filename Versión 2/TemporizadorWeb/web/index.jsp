@@ -41,6 +41,7 @@
                     <article id="artBoton">
 
                         <input type="submit" value="Ingresar" id="boton">
+                        <input type="button" value="Registrar" id="boton" onclick="location.href='../TemporizadorWeb/registrarUsuario.jsp'">
 
                     </article>
 

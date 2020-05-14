@@ -4,15 +4,25 @@
     Author     : danbr
 --%>
 
+<%@page import="DAO.BDrutinas"%>
+<%@page import="Logica.Persona"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<% Persona u = (Persona) session.getAttribute("UnUsuario");%>
+<% BDrutinas ru = new BDrutinas(); %>
+<% String rutinas = ru.consulta_rutinas(u.getUsuario()); %>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="estiloLogin.css"/>
+        <script>
+            function escribir(){
+                document.getElementById('comentarios').value=<%=rutinas%>
+            }
+        </script>
         <title>Login</title>
     </head>
-    <body>
+    <body onload="escribir()">
         <form action="tiempos.jsp">
            
             <center>
@@ -35,12 +45,12 @@
 
                         </article>
 
-                    <h1>Nombre: Pepe</h1>
-                    <h1>Apellido: Gomez</h1>   
-                    <h1>Edad: 47</h1>
+                    <h1>Nombre: <input type="text" value="<%=u.getNombre()%>" disabled=""></h1>
+                    <h1>Apellido: <input type="text" value="<%=u.getApellido()%>" disabled=""></h1>   
+                    <h1>Edad: <input type="text" value="<%=u.getEdad()%>" disabled=""></h1>
                     <h1>Rutinas de ejercicio</h1> 
                     
-                    <textarea name="comentarios" rows="10" cols="45">Rutina de ejercicio epica</textarea>
+                    <textarea cols=50 rows=10 name="comentarios" id="comentarios"></textarea>
                     
                     <article id="artBoton">
                     
