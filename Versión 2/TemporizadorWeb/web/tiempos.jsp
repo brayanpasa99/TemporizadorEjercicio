@@ -41,15 +41,32 @@
                     
                     <article id="artBoton">
                     
-                        <input type="submit" value="Ingresar Tiempos" id="boton">
-
+                        <input type="submit" value="Ingresar Tiempos" id="boton"> 
+                    
                     </article>
                     
                 </article>
                 
             </center>
+            
+        </form>
+        
+            <center>
+        
+                <article id="artConsulta">
+            
+                    <form action="consultaUsuario.jsp">
+
+                        <input type="submit" value="Cosultar registros pasados" id="botonConsulta">
+
+                    </form>
+        
+                </article>
+                
+            </center>
              
         </form>
+        
     </body>
 </html>
 

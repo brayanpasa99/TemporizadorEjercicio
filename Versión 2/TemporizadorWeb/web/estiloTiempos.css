@@ -26,7 +26,7 @@
     width: 700px;
     height: 60px;
     border: 2px ;
-    border-radius: 1px;
+    border-radius: 6px;
     border-style: solid;
     
 }
@@ -38,7 +38,18 @@
     width: 700px;
     height: 48px;
     border: 2px ;
-    border-radius: 1px;
+    border-radius: 6px;
+    border-style: solid;
+    
+}
+
+#artConsulta{
+        
+    background-color:   #a5fc74  ;
+    width: 700px;
+    height: 48px;
+    border: 2px ;
+    border-radius: 6px;
     border-style: solid;
     
 }
@@ -59,9 +70,24 @@ body{
     background-color: #1883ba;
     border-radius: 6px;
     border: 2px solid #0016b0;
-    width: 200px;
+    width: 300px;
     
 }
+
+#botonConsulta{
+    
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #1883ba;
+    border-radius: 6px;
+    border: 2px solid #0016b0;
+    width: 300px;
+    
+}
+
 
 #minEbn{
     
