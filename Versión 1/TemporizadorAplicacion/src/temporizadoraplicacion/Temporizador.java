@@ -30,6 +30,15 @@ public class Temporizador {
     private int segundoDescanso = 30;
     private Timer tiempo;
     private boolean corriendo;
+    private String fullHour = "";
+
+    public String getFullHour() {
+        return fullHour;
+    }
+
+    public void setFullHour(String fullHour) {
+        this.fullHour = fullHour;
+    }
     JTextArea estado;
     JTextArea temporizador_total;
 
@@ -100,8 +109,6 @@ public class Temporizador {
                 }
             }
             if (corriendo) {
-                String fullHour = "";
-
                 fullHour += (hora > 9) ? ":" + hora : "0" + hora;
                 fullHour += (minutosEjercicio > 9) ? ":" + minutosEjercicio : ":0" + minutosEjercicio;
                 fullHour += (segundo > 9) ? ":" + segundo : ":0" + segundo;
