@@ -19,8 +19,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author braya
  */
-@WebServlet(name = "validaDatos", urlPatterns = {"/validaDatos"})
-public class validaDatos extends HttpServlet {
+@WebServlet(name = "validaDatosServlet", urlPatterns = {"/validaDatosServlet", "/validaDatos"})
+public class validaDatosServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,14 +37,17 @@ public class validaDatos extends HttpServlet {
 
         BDvalidarDatos val_d = new BDvalidarDatos();
         Persona u = new Persona();  
-        
-        u.setUsuario(request.getParameter("user"));
-        u.setContraseña(request.getParameter("password"));
 
-        String obtiene_usuario = val_d.datos_usuario(u.getUsuario(), u.getContraseña());
+        String obtiene_usuario = val_d.existe_usuario(request.getParameter("user"), request.getParameter("password"));
         System.out.println(obtiene_usuario);
         if ("NoExiste".equals(obtiene_usuario)) {
-            request.getSession().setAttribute("unaPersona", u);
+            response.sendRedirect("registrarUsuario.jsp");
+        } else {
+            String[] datos_completos = val_d.datos_usuario(request.getParameter("user"));
+            u.setApellido(datos_completos[0]);
+            u.setNombre(datos_completos[1]);
+            u.setEdad(Integer.parseInt(datos_completos[2]));
+            u.setUsuario(datos_completos[3]);    
         }
 
         try (PrintWriter out = response.getWriter()) {

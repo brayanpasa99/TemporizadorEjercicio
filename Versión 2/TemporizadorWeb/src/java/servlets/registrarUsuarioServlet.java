@@ -21,8 +21,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author braya
  */
-@WebServlet(name = "registrarUsuario", urlPatterns = {"/registrarUsuario"})
-public class registrarUsuarioservlet extends HttpServlet {
+@WebServlet(name = "registrarUsuario", urlPatterns = {"/registrarUsuario", "/registrarUsuarioServlet"})
+public class registrarUsuarioServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -42,17 +42,33 @@ public class registrarUsuarioservlet extends HttpServlet {
         
         try {
             
-            String usuario = request.getParameter("user");
-            String contraseña = request.getParameter("password");
-            reg_u.inserta_usuario(usuario, contraseña);
             /* TODO output your page here. You may use following sample code. 
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet registrarUsuarioservlet</title>");            
+            out.println("<title>Servlet registrarUsuarioServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet registrarUsuarioservlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet registrarUsuarioServlet at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");*/
+            
+            String usuario = request.getParameter("user");
+            String contraseña = request.getParameter("password");
+            String apellido = request.getParameter("lastnameu");
+            String nombre = request.getParameter("nameu");
+            String edad = request.getParameter("age");
+            reg_u.consigue_id();
+            reg_u.inserta_tdatosusuario(apellido, nombre, edad);
+            reg_u.inserta_tusuarios(usuario, contraseña);  
+            /* TODO output your page here. You may use following sample code. 
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet registrarUsuarioServlet</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet registrarUsuarioServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");*/
         } catch (Exception e) {

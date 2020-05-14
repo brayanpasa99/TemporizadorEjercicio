@@ -13,8 +13,8 @@
     </head>
     <body>
         <form action="validaDatos">
-            <h1>Usuario: <input type="text" id="user" name="user"></h1>
-            <h1>Contraseña: <input type="password" id="password" name="password"></h1>   
+            <h1>Usuario: <input type="text" id="user" name="user" required=""></h1>
+            <h1>Contraseña: <input type="password" id="password" name="password" required=""></h1>   
             <input type="submit" value="Ingresar">
         </form>
     </body>

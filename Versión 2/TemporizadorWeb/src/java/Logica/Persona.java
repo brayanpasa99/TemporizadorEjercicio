@@ -13,11 +13,19 @@ public class Persona {
 
     String nombre;
     String apellido;
+    int edad;
     String usuario;
-    String contraseña;
 
     public Persona() {
 
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
     }
 
     public String getNombre() {
@@ -32,10 +40,6 @@ public class Persona {
         return usuario;
     }
 
-    public String getContraseña() {
-        return contraseña;
-    }
-
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -46,10 +50,6 @@ public class Persona {
 
     public void setUsuario(String usuario) {
         this.usuario = usuario;
-    }
-
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
     }
 
 }

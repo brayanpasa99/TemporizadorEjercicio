@@ -16,47 +16,62 @@ import java.util.logging.Logger;
  * @author braya
  */
 public class BDvalidarDatos {
-    
+
     BDConexion conexion;
-    
-    public BDvalidarDatos(){
+
+    public BDvalidarDatos() {
         conexion = new BDConexion();
         System.out.println(conexion.getMensaje());
     }
-    
-    public String datos_usuario(String usuario, String contraseña){
+
+    public String existe_usuario(String usuario, String contraseña) {
         try {
-            String strSQL = "SELECT * FROM usuarios WHERE usuario = '" + usuario +"' AND contraseña = '" + contraseña + "';";
+            String strSQL = "SELECT * FROM usuarios WHERE usuario = '" + usuario + "' AND contraseña = '" + contraseña + "';";
             System.out.println(strSQL);
             PreparedStatement pstm = conexion.getConexion().prepareStatement(strSQL);
             ResultSet res = pstm.executeQuery();
-            if(!res.next()){
+            if (!res.next()) {
                 return "NoExiste";
             } else {
                 return res.getString(1);
             }
-            
-            /*public double getCopia(String idMaterial) throws SQLException {
-            String strSQL = "SELECT * FROM copia WHERE k_isbnissn = '" + idMaterial + "' ORDER BY k_copia";
-            System.out.println(strSQL);
-            PreparedStatement pstm = conexion.getConexion().prepareStatement(strSQL);
-            ResultSet res = pstm.executeQuery();
-            double copia1 = 0;
-            if (res.next()){
-            if (res.getRow() == 1){
-            copia1 = res.getDouble("k_copia");
-            }  
-            }
-            return copia1;
-        }*/ } catch (SQLException ex) {
+
+        } catch (SQLException ex) {
             System.out.println(ex.toString());
             Logger.getLogger(BDvalidarDatos.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
     }
-    
+
+    public String[] datos_usuario(String usuario) {
+        
+        String[] datos = new String[4];
+        try {
+            String strSQL = "SELECT du.apellido, du.nombre, du.edad, u.usuario \n"
+                    + "FROM datosusuario du \n"
+                    + "INNER JOIN usuarios u ON du.id_datosu = u.id_datosu \n"
+                    + "WHERE usuario = '" + usuario + "';";
+            System.out.println(strSQL);
+            PreparedStatement pstm = conexion.getConexion().prepareStatement(strSQL);
+            ResultSet res = pstm.executeQuery();
+            while (res.next()) {
+                datos[0] = res.getString(1);
+                datos[1] = res.getString(2);
+                datos[2] = res.getString(3);
+                datos[3] = res.getString(4);
+            }
+            
+            return datos;
+
+        } catch (SQLException ex) {
+            System.out.println(ex.toString());
+            Logger.getLogger(BDvalidarDatos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+
     public String getMensaje() {
         return conexion.getMensaje();
     }
-    
+
 }
