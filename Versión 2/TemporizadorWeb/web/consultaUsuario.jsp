@@ -1,7 +1,7 @@
 <%-- 
-    Document   : index
-    Created on : 6/05/2020, 10:57:29 PM
-    Author     : braya
+    Document   : consultaUsuario
+    Created on : 13/05/2020, 09:48:20 PM
+    Author     : danbr
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -13,12 +13,7 @@
         <title>Login</title>
     </head>
     <body>
-        <form action="validaDatos">
-<<<<<<< HEAD
-            <h1>Usuario: <input type="text" id="user" name="user" required=""></h1>
-            <h1>Contraseña: <input type="password" id="password" name="password" required=""></h1>   
-            <input type="submit" value="Ingresar">
-=======
+        <form action="tiempos.jsp">
            
             <center>
             
@@ -35,17 +30,21 @@
                         <article id="art2">
 
                             <center>
-                            <h3>Login</h3>
+                            <h3>Datos del usuario</h3>
                             </center>
 
                         </article>
 
-                    <h1>Usuario:  &nbsp &nbsp &nbsp &nbsp &nbsp<input type="text" id="user" name="user" value="daniel"></h1>
-                    <h1>Contraseña: &nbsp &nbsp &nbsp<input type="password" id="password" name="password" value="123"></h1>   
+                    <h1>Nombre: Pepe</h1>
+                    <h1>Apellido: Gomez</h1>   
+                    <h1>Edad: 47</h1>
+                    <h1>Rutinas de ejercicio</h1> 
+                    
+                    <textarea name="comentarios" rows="10" cols="45">Rutina de ejercicio epica</textarea>
                     
                     <article id="artBoton">
                     
-                        <input type="submit" value="Ingresar" id="boton">
+                        <input type="submit" value="Regresar" id="boton">
 
                     </article>
                     
@@ -53,7 +52,7 @@
                 
             </center>
              
->>>>>>> origin/InterfazServletBase
         </form>
     </body>
 </html>
+

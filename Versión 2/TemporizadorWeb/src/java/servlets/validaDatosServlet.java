@@ -51,7 +51,9 @@ public class validaDatosServlet extends HttpServlet {
         }
 
         try (PrintWriter out = response.getWriter()) {
-
+            
+            response.sendRedirect("tiempos.jsp");
+            
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
