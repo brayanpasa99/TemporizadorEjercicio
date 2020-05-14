@@ -63,15 +63,45 @@ body{
     
 }
 
-#artTextArea{
-        
+#minEbn{
+    
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
     font-size: 20px;
+    color: #000000;
+    background-color:   #ffffff  ;
+    border-radius: 6px;
+    border: 2px solid #0016b0;
+    width: 200px;
     
 }
 
-textarea{
+#ejercicio{
     
-   border-radius: 6px;
-   border: 2px solid #0016b0;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #000000;
+    background-color:   #ffffff  ;
+    border-radius: 6px;
+    border: 2px solid #0016b0;
+    width: 200px;
     
 }
+
+#descando{
+   
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #000000;
+    background-color: #ffffff;
+    border-radius: 6px;
+    border: 2px solid #0016b0;
+    width: 200px;
+    
+}
+

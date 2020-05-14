@@ -49,7 +49,7 @@ public class validaDatos extends HttpServlet {
 
         try (PrintWriter out = response.getWriter()) {
             
-            response.sendRedirect("temporizador.jsp");
+            response.sendRedirect("tiempos.jsp");
             
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
