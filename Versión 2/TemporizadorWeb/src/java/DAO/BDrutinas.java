@@ -67,7 +67,7 @@ public class BDrutinas {
             ResultSet res = pstm.executeQuery();
             String lectura = ""; 
             while (res.next()) {
-                lectura = lectura + "Descanso: " + res.getString(1) + " segundos " + "Ejercicio: " + res.getString(2) +" segundos " + "Duración:" + res.getString(3) + " minutos " + "Fecha: " + res.getString(4) + "\n";
+                lectura = lectura + "Descanso: " + res.getString(1) + " segundos " + "Ejercicio: " + res.getString(2) +" segundos " + "Duración:" + res.getString(3) + " minutos " + "Fecha: " + res.getString(4) + "\n<br>";
             }
             
             return lectura;

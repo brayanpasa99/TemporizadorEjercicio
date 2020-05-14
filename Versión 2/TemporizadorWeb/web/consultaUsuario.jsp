@@ -54,7 +54,7 @@
                     <h1>Edad: <input type="text" value="<%=u.getEdad()%>" disabled=""></h1>
                     <h1>Rutinas de ejercicio</h1> 
                     
-                    <textarea cols=50 rows=10 name="comentarios" id="comentarios"></textarea>
+                    <input type="text" size="100" name="comentarios" id="comentarios" value="<%=rutinas%>">
                     
                     <article id="artBoton">
                     
