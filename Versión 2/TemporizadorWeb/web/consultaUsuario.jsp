@@ -38,9 +38,9 @@
                     <h1>Nombre: Pepe</h1>
                     <h1>Apellido: Gomez</h1>   
                     <h1>Edad: 47</h1>
-                    <h1>Tiempo de ejercicio: 40 seg</h1> 
-                    <h1>Tiempo de descanso: 20 seg</h1> 
-                    <h1>Ultimo ingreso: 14/05/2020</h1> 
+                    <h1>Rutinas de ejercicio</h1> 
+                    
+                    <textarea name="comentarios" rows="10" cols="45">Rutina de ejercicio epica</textarea>
                     
                     <article id="artBoton">
                     
