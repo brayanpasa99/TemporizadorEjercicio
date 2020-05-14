@@ -35,8 +35,8 @@
 
                         </article>
 
-                    <h1>Usuario:  &nbsp &nbsp &nbsp &nbsp &nbsp<input type="text" id="user" name="user"></h1>
-                    <h1>Contraseña: &nbsp &nbsp &nbsp<input type="password" id="password" name="password"></h1>   
+                    <h1>Usuario:  &nbsp &nbsp &nbsp &nbsp &nbsp<input type="text" id="user" name="user" value="daniel"></h1>
+                    <h1>Contraseña: &nbsp &nbsp &nbsp<input type="password" id="password" name="password" value="123"></h1>   
                     
                     <article id="artBoton">
                     

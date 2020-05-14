@@ -1,0 +1,119 @@
+#todo{
+    
+    font-family: Comic Sans MS, cursive, sans-serif; 
+    width: 700px;
+    border: 2px ;
+    border-style: solid;
+    border-radius: 6px;
+    
+}
+
+#art1{
+     
+    font-size: 35px;
+    background-color:  #fff93d ;
+    width: 700px;
+    height: 100px;
+    border: 2px ;
+    border-radius: 6px;
+    border-style: solid;
+    
+}
+
+#art2{
+    
+    background-color:   #a5fc74  ;
+    width: 700px;
+    height: 60px;
+    border: 2px ;
+    border-radius: 1px;
+    border-style: solid;
+    
+}
+
+#artBoton{
+        
+    font-family: Comic Sans MS, cursive, sans-serif; 
+    background-color:   #a5fc74  ;
+    width: 700px;
+    height: 48px;
+    border: 2px ;
+    border-radius: 1px;
+    border-style: solid;
+    
+}
+
+body{
+    
+   background-color:   #3d95ff ; 
+    
+}
+
+#boton{
+    
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #1883ba;
+    border-radius: 6px;
+    border: 2px solid #0016b0;
+    width: 200px;
+    
+}
+
+#minEbn{
+    
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #000000;
+    background-color:   #ffffff  ;
+    border-radius: 6px;
+    border: 2px solid #0016b0;
+    width: 200px;
+    
+}
+
+#ejercicio{
+    
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #000000;
+    background-color:   #ffffff  ;
+    border-radius: 6px;
+    border: 2px solid #0016b0;
+    width: 200px;
+    
+}
+
+#descando{
+   
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #000000;
+    background-color: #ffffff;
+    border-radius: 6px;
+    border: 2px solid #0016b0;
+    width: 200px;
+    
+}
+
+#artTextArea{
+        
+    font-size: 20px;
+    
+}
+
+textarea{
+    
+   border-radius: 6px;
+   border: 2px solid #0016b0;
+    
+}
